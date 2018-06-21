@@ -1,8 +1,6 @@
 FROM node:8-slim
 
 # See https://crbug.com/795759 for the libgconf order
-
-
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -32,5 +30,4 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     useradd -r -g pptruser -G audio,video pptruser && \
     mkdir -p /home/pptruser/Downloads && \
     chown -R pptruser:pptruser /home/pptruser
-
 
