@@ -27,6 +27,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get purge --auto-remove -y curl && \
     rm -rf /src/*.deb && \
+    rm -f /etc/apt/sources.list.d/google.list && \
     # Add user so we don't need --no-sandbox.
     groupadd -r pptruser && \
     useradd -r -g pptruser -G audio,video pptruser && \
