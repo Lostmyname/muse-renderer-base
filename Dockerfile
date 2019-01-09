@@ -1,4 +1,4 @@
-FROM node:8.12.0-slim
+FROM node:8.15.0-slim
 
 # See https://crbug.com/795759 for the libgconf order
 RUN export DEBIAN_FRONTEND=noninteractive && \
