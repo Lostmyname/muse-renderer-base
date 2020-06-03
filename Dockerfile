@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12-slim
 
 # See https://crbug.com/795759 for the libgconf order
 RUN export DEBIAN_FRONTEND=noninteractive && \
