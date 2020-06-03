@@ -1,9 +1,11 @@
-FROM node:12
+FROM node:12-slim
 
 # See https://crbug.com/795759 for the libgconf order
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
+        ca-certificates \
+        gnupg2 \
         apt-utils \
         curl \
         libgconf-2-4 && \
