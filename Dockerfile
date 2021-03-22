@@ -3,6 +3,7 @@ FROM node:12-slim
 # See https://crbug.com/795759 for the libgconf order
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
+    apt-get install -y wget gnupg && \
     apt-get install -y --no-install-recommends \
         ca-certificates \
         gnupg2 \
@@ -17,12 +18,13 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get -t unstable install  \
         fonts-noto-color-emoji && \
     apt-get -t stable install -y --no-install-recommends \
-        google-chrome-unstable \
+        google-chrome-stable \
+        libxss1 \
         fonts-ipafont-gothic \
         fonts-wqy-zenhei \
         fonts-thai-tlwg \
-              fonts-kacst \
-              ttf-freefont && \
+        fonts-kacst \
+        fonts-freefont-ttf && \
     # It's a good idea to use dumb-init to help prevent zombie chrome processes.
     curl -sSL -o /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.1/dumb-init_1.2.1_amd64 && \
     chmod +x /usr/local/bin/dumb-init && \
