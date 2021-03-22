@@ -18,7 +18,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get -t unstable install  \
         fonts-noto-color-emoji && \
     apt-get -t stable install -y --no-install-recommends \
-        google-chrome-stable \
+        google-chrome-unstable \
         libxss1 \
         fonts-ipafont-gothic \
         fonts-wqy-zenhei \
